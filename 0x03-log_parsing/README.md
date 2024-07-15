@@ -23,17 +23,17 @@ For the ``“0x03. Log Parsing”`` project, you will need to apply your knowled
     - Parsing strings to extract specific data points.
     - Aggregating data to compute summaries.
   
-4. Regular Expressions:
+4. __Regular Expressions:__
 
     - Using regular expressions to validate the format of each line.
     - [Python Regular Expressions](https://docs.python.org/3/library/re.html)
   
-5. Dictionaries in Python:
+5. __Dictionaries in Python:__
 
     - Using dictionaries to count occurrences of status codes and accumulate file sizes.
     - [Python Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
   
-6. Exception Handling:
+6. __Exception Handling:__
 
     - Handling possible exceptions that may arise during file reading and data processing.
     - [Python Exceptions](https://docs.python.org/3/tutorial/errors.html)
@@ -59,7 +59,7 @@ By studying these concepts and utilizing the resources provided, you will be wel
 
 # Tasks
 
-0. Log parsing
+__0. Log parsing__
 
 Write a script that reads stdin line by line and computes metrics:
 
