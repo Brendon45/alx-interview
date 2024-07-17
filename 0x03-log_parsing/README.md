@@ -145,9 +145,11 @@ __Repo:__
 
 ## Explanation
 
-1. #!/usr/bin/python3
+1.
 
-This is a shebang line that tells the system to use the Python 3 interpreter to run this script.
+      #!/usr/bin/python3
+
+- This is a shebang line that tells the system to use the Python 3 interpreter to run this script.
 
 2.      """ Log parsing:
 
@@ -201,3 +203,61 @@ This is a shebang line that tells the system to use the Python 3 interpreter to 
 - This initializes a dictionary named `status` with keys representing possible `HTTP status` codes and values set to 0, indicating the count of each `status code`.
 
 6.
+
+        counter = 0
+        data = 0
+
+- These lines initialize `counter` to 0, which will count the number of lines processed, and `data` to 0, which will hold the total file size.
+
+7.
+
+        try:
+            for line in sys.stdin:
+
+- This starts a `try` block to catch `KeyboardInterrupt` exceptions. The `for line in sys.stdin` loop reads each line from the standard input (stdin).
+
+8.
+
+        if counter == 10:
+            printx(data, status)
+            counter = 1
+        else:
+            counter = counter + 1
+
+- If `counter` equals 10, it calls the `printx` function to print the metrics and resets `counter` to 1. Otherwise, it increments `counter` by 1.
+
+9. 
+
+        parsed = line.split()
+
+- This splits the current line into a list of strings, parsed.
+
+10.
+
+        try:
+            data = data + int(parsed[-1])
+        except Exception as e:
+            pass
+
+- This tries to add the last element of `parsed` (the file size) to `data`. If an exception occurs (e.g., if the last element is not an integer), it is caught and ignored.
+
+11. 
+
+        try:
+            for key, value in status.items():
+                if key == parsed[-2]:
+                    status[key] = status[key] + 1
+        except Exception as e:
+            pass
+
+- This loop iterates through the `status` dictionary. If the second-to-last element of `parsed` matches a key in `status`, it increments the corresponding value in `status`. If an exception occurs (e.g., if the second-to-last element is not a valid status code), it is caught and ignored.
+
+12.
+
+        printx(data, status)
+       except KeyboardInterrupt as e:
+           printx(data, status)
+
+- After the loop ends (either normally or due to a `KeyboardInterrupt`), it calls `printx` to print the final metrics.
+
+- In summary, this script reads log lines from `stdin`, calculates the `total file size`, `counts the occurrences of specific HTTP status codes`, and prints the results every 10 lines or when interrupted by the user.
