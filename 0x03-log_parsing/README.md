@@ -143,5 +143,61 @@ __Repo:__
         Directory: 0x03-log_parsing
         File: 0-stats.py
 
+## Explanation
 
+1. #!/usr/bin/python3
 
+This is a shebang line that tells the system to use the Python 3 interpreter to run this script.
+
+2.      """ Log parsing:
+
+        A script that reads stdin line by line and computes metrics:
+
+        Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
+        <status code> <file size> (if the format is not this one, the line
+        must be skipped)
+        After every 10 lines and/or a keyboard interruption (CTRL + C),
+        print these statistics from the beginning:
+        Total file size: File size: <total size>
+        where <total size> is the sum of all previous <file size>
+        (see input format above)
+        Number of lines by status code:
+        possible status code: 200, 301, 400, 401, 403, 404, 405 and 500
+        if a status code doesn’t appear or is not an integer,
+        don’t print anything for this status code
+        format: <status code>: <number>
+        status codes should be printed in ascending order
+
+        line list = [<IP Address>, -, [<date>], "GET /projects/260 HTTP/1.1",
+        <status code>, <file size>]
+
+        """
+
+- This is a docstring that explains what the script does, the input format it expects, and the output it produces.
+
+3. 
+
+        import sys
+
+- This imports the `sys` module, which provides access to system-specific parameters and functions.
+
+4.  
+
+        def printx(data, status):
+            """ print the log """
+            print("File size: {}".format(data))
+            for key, value in sorted(status.items()):
+                if value != 0:
+                    print("{}: {}".format(key, value))
+
+- This defines a function named `printx` that takes two arguments: `data` (the total file size) and `status` (a dictionary containing the count of different status codes). It prints the total file size and the count of each status code that is non-zero.
+
+5. 
+
+        status = {
+            "200": 0, "301": 0, "400": 0, "401": 0,
+            "403": 0, "404": 0, "405": 0, "500": 0}
+
+- This initializes a dictionary named `status` with keys representing possible `HTTP status` codes and values set to 0, indicating the count of each `status code`.
+
+6.
