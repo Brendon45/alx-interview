@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-UTF-8 validation:
+utf 8 validation:
 
 Write a method that determines if a given data set
 represents a valid UTF-8 encoding.
 
 Prototype: def validUTF8(data)
 Return: True if data is a valid UTF-8 encoding, else
-return False.
-A character in UTF-8 can be 1 to 4 bytes long.
-The data set can contain multiple characters.
-The data will be represented by a list of integers.
+return False
+A character in UTF-8 can be 1 to 4 bytes long
+The data set can contain multiple characters
+The data will be represented by a list of integers
 Each integer represents 1 byte of data, therefore you
 only need to handle the 8 least significant bits of each
 integer.
@@ -28,6 +28,7 @@ def validUTF8(data):
     """
     number_bytes = 0
 
+    # Masks to check the most significant bits (MSB) of a byte
     mask_1 = 1 << 7
     mask_2 = 1 << 6
 
@@ -35,29 +36,30 @@ def validUTF8(data):
         mask_byte = 1 << 7
 
         if number_bytes == 0:
-            # Count the number of leading 1's in the current byte
+            # Count the number of leading 1's in the current byte to determine
+            # the number of bytes in the UTF-8 character
             while mask_byte & i:
                 number_bytes += 1
                 mask_byte = mask_byte >> 1
 
+            # If the byte starts with 0, it is a 1-byte character
             if number_bytes == 0:
                 continue
 
-            # If the number of bytes is 1 or more than 4, it's invalid
+            # UTF-8 characters can be 1 to 4 bytes long
             if number_bytes == 1 or number_bytes > 4:
                 return False
-
         else:
-            # Check if the current byte is a valid continuation byte
+            # Check if the byte is a valid continuation byte,
+            # which should start with '10'
             if not (i & mask_1 and not (i & mask_2)):
                 return False
 
+        # Decrement the number of bytes expected
         number_bytes -= 1
 
-    # All characters must be fully formed
-    return number_bytes == 0
+    # If number_bytes is not 0, then not all bytes have been matched correctly
+    if number_bytes == 0:
+        return True
 
-
-# Example usage
-print(validUTF8([197, 130, 1]))  # True
-print(validUTF8([235, 140, 4]))  # False
+    return False
