@@ -16,4 +16,10 @@
 
 4. __Coding Challenges__: Practice problems and their solutions.
 
+5. __Interview Tips__: Valuable tips, strategies, and advice from experienced professionals to help you perform at your best during interviews. From behavioral interviews to technical assessments, these tips will give you a competitive edge.
+
+### Author✍️:
+
+Brendon Jeje | [LinkTree](https://linktr.ee/brendonjeje), [Linkedin](https://www.linkedin.com/in/brendonjeje/) && [Twitter](https://twitter.com/brendon4545).
+
 ## Happy coding!😊
