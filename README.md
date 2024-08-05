@@ -1,4 +1,4 @@
-![https://github-production-user-asset-6210df.s3.amazonaws.com/125453474/259838372-ab3c1e01-2b98-47ae-96b7-37c07c85a2f1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240805%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240805T230636Z&X-Amz-Expires=300&X-Amz-Signature=b4e7d2a2c7f6ac963c9b4771db2ce8f66e8e3dd175732590fad9fb7622f1f052&X-Amz-SignedHeaders=host&actor_id=137000164&key_id=0&repo_id=676041824]
+![INTERVIEW](https://github.com/elyse502/AirBnB_clone/assets/125453474/ab3c1e01-2b98-47ae-96b7-37c07c85a2f1)
 
 ## Holberton School Interview
 
