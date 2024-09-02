@@ -38,15 +38,15 @@ For this project, you will need to leverage your understanding of prime numbers,
     - Khan Academy: Prime Numbers: Introduction to prime numbers.
     - Sieve of Eratosthenes in Python: A step-by-step guide to implementing the sieve algorithm in Python.
       
-    - __Game Theory Basics__:
+- __Game Theory Basics__:
 
     - Game Theory Introduction: A simple explanation of game theory and strategic decision-making.
       
-    - __Dynamic Programming__:
+- __Dynamic Programming__:
 
     - What Is Dynamic Programming With Python Examples: An introduction to dynamic programming with Python examples.
       
-    - __Python Official Documentation__:
+- __Python Official Documentation__:
 
-- Python Lists: Managing lists in Python, useful for tracking the game state.
+    - Python Lists: Managing lists in Python, useful for tracking the game state.
 
