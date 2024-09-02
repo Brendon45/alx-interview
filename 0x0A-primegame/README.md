@@ -105,3 +105,23 @@ Third round: `1`
 Ben wins because there are no prime numbers for Maria to choose
 
 __Result: Ben has the most wins__
+
+    carrie@ubuntu:~/0x0A-primegame$ cat main_0.py
+    #!/usr/bin/python3
+
+    isWinner = __import__('0-prime_game').isWinner
+
+
+    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
+
+    carrie@ubuntu:~/0x0A-primegame$
+
+    carrie@ubuntu:~/0x0A-primegame$ ./main_0.py
+    Winner: Ben
+    carrie@ubuntu:~/0x0A-primegame$
+
+__Repo__:
+
+- GitHub repository: `alx-interview`
+- Directory: `0x0A-primegame`
+- File: `0-prime_game.py`
